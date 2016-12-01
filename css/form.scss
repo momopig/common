@@ -1,0 +1,216 @@
+$labelWidth: 78px;
+$inputInnerWidth: 374px;
+$selectInnerWidth: $inputInnerWidth;
+$textAreaInnerWidth: 558px;
+
+$inputInnerHeight: 30px;
+$selectInnerHeight: $inputInnerHeight;
+$textAreaInnerHeight: 142px;
+
+$inputBorderColor: #E3E3E4;
+$inputBorderWidth: 1px;
+$inputBorderRaidus: 2px;
+
+$inputPaddingLeft: 8px;
+
+$labelColor: #696969;
+$inputColor: #696969;
+
+$labelFontSize: 14px;
+$inputFontSize: 14px;
+
+/*sass通用宏 START*/
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin inputBorder() {
+  border: $inputBorderWidth solid $inputBorderColor;
+  @include rounded($inputBorderRaidus);
+}
+
+/*sass通用宏 END*/
+
+.common-form {
+    .filed-area{
+        >.left-part{
+            float: left;
+        }
+        >.right-part{
+            float: left;
+            margin-left: 320px;
+        }
+    }
+    font-size: 14px;
+    label {
+      color: #696969;
+    }
+    .field-group {
+      margin-top: 24px;
+    }
+    .field-group:nth-child(1) {
+      margin-top: 0px;
+    }
+    .field-group:nth-last-child(1) {
+      /*margin-top: 0px;*/
+    }
+    .field-group-required::before{
+        float: left;
+        padding-top: $inputInnerHeight/3;
+        content: '*';
+        color: #DD201C;
+        font-size: 16px;
+        /*height: $inputInnerHeight;
+        line-height: $inputInnerHeight;*/
+    }
+    .form-item-label {
+        position: relative;
+        float: left;
+        /*  width: $labelWidth;*/
+        height: $inputInnerHeight;
+        margin-right: 14px;
+        line-height: $inputInnerHeight;
+        color: $labelColor;
+        text-align: right;
+        font-size: $labelFontSize;
+    }
+    .dark-label{
+        color: #999;
+    }
+    .form-item-label.not-require-tips:after {
+        position: absolute;
+        top: 22px;
+        right: 0;
+        content: '(选填)';
+        color: #BDBDBD;
+        font-size: 12px;
+
+        white-space: nowrap;
+    }
+    .form-item-value{
+      height: $inputInnerHeight;
+      line-height: $inputInnerHeight;
+      font-size: $inputFontSize;
+      color: $inputColor;
+    }
+    .form-item-input-area{
+        float: left;
+    }
+    .form-item-input {
+        height: $inputInnerHeight;
+        width: $inputInnerWidth;
+        line-height: $inputInnerHeight;
+        padding: 0;
+        padding-left: $inputPaddingLeft;
+        @include inputBorder();
+        color: $inputColor;
+        font-size: $inputFontSize;
+    }
+    .form-item-input-error{
+        border-color: #DD201C !important;
+    }
+
+    .input-error-tips{
+        margin-top: 4px;
+        color: #DD201C;
+        font-size: 12px;
+    }
+    .form-item-textarea {
+        height: $textAreaInnerHeight;
+        width: $textAreaInnerWidth;
+        line-height: $inputInnerHeight;
+        padding: 0;
+        padding-left: $inputPaddingLeft;
+        @include inputBorder();
+        color: $inputColor;
+        font-size: $inputFontSize;
+    }
+    .form-item-select {
+        color: $inputColor;
+        font-size: $inputFontSize;
+    }
+    .form-item-table{
+        float: left;
+    }
+
+    .form-btn {
+        float: left;
+        width: 88px;
+        height: 30px;
+        @include rounded(2px);
+        line-height: 30px;
+        text-align: center;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .form-btn-area {
+      margin-top: 56px;
+    }
+    .form-btn-submit {
+        @extend .form-btn;
+        background: #3896F8;
+        color: #fff;
+    }
+    .form-btn-cancel {
+        @extend .form-btn;
+        margin-left: 16px;
+        border: 1px solid #3896F8;
+        color: #3896F8;
+    }
+    .filed-area {
+        padding-left: 90px;
+        padding-top: 22px;
+    }
+    .select-item {
+        line-height: 58px;
+    }
+    .sub-title {
+        position: relative;
+        overflow: hidden;
+        height: 16px;
+        width: 100%;
+        font-size: 16px;
+        line-height: 16px;
+        white-space: nowrap;
+        color: #999999;
+        .sub-title-text{
+            position: absolute;
+            z-index: 2;
+            background: #fff;
+            padding-right: 16px;
+
+        }
+    }
+    .sub-title::after {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto 0;
+        content: '';
+        background: #E3E3E4;
+        height: 1px;
+        vertical-align: middle;
+    }
+    .select-tips {
+        float: left;
+        width: 70px;
+        font-size: 14px;
+    }
+    .select-group {
+        float: left;
+        width: 80%;
+    }
+}
+.display-data-form{
+    .field-group{
+        margin-top: 0;
+    }
+    .form-item-label{
+        color: #999;
+    }
+}

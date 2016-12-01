@@ -1,0 +1,51 @@
+/*header START*/
+header {
+  position: absolute;
+  z-index: 2;
+  background-color: #3A507C;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 22px !important;
+  color: #fff;
+}
+
+header .logo-area {
+  float: left;
+  font-size: 16px;
+  height: 100%;
+  line-height: 44px;
+  /*    background: url('./../../images/common/logo.png') left center no-repeat;
+      background-size: 246px auto;
+      width: 30%;
+      height: 100%;
+      margin-left: 34px;*/
+}
+
+header .right-part {
+  float: right;
+  width: 182px;
+  height: 100%;
+  line-height: 44px;
+}
+
+header .right-part .user-inf {
+  float: left;
+}
+
+header .right-part .portrait {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 30px;
+}
+
+header .right-part .nickName {
+  margin-left: 38px;
+}
+
+header .right-part > .logout {
+  float: right;
+}
+/*header END*/

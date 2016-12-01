@@ -1,0 +1,79 @@
+/*sass通用宏 START*/
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin inputBorder(){
+  border: $inputBorderWidth solid $inputBorderColor;
+  @include rounded($inputBorderRaidus);
+}
+/*sass通用宏 END*/
+$blue : #3896F8;
+
+.btn{
+  text-align: center;
+  cursor: pointer;
+  @include rounded(2px);
+}
+.blue-empty-btn{
+  @extend .btn;
+  color : $blue;
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 20px;
+  border: 1px solid $blue;
+}
+
+.blue-full-btn{
+  @extend .btn;
+  background: $blue;
+  color : #fff;
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 20px;
+}
+.btn-delete{
+
+  font-size: 12px;
+  @extend .blue-empty-btn;
+}
+.btn-check-user{
+  @extend .blue-empty-btn;
+}
+.btn-edit-rule{
+  float: right;
+  @extend .blue-empty-btn;
+}
+.btn-test-rule{
+  display: inline-block;
+  @extend .blue-empty-btn;
+}
+.btn-create-user-group{
+  @extend .blue-empty-btn;
+}
+.icon-add-circle::before{
+  display: inline-block;
+  content: '+';
+  background: #fff;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  border: 1px solid #3896F8;
+  color: #3896F8;
+  text-align: center;
+}
+.text-btn{
+  padding-left: 537px;
+  cursor: pointer;
+  color: #999999;
+  font-size: 12px;
+}
+.common-btn{
+  cursor: pointer
+}

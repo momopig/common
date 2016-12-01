@@ -1,0 +1,80 @@
+@mixin icon-tips(){
+  content: '';
+  display: inline-block;
+  background-size: 100% auto;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+.icon-tips-success::before{
+  background: url(../../images/common/dialog/icon-tips-success.png) no-repeat center center;
+  @include icon-tips();
+}
+.icon-tips-warn::before{
+  background: url(../../images/common/dialog/icon-tips-warn.png) no-repeat center center;
+  @include icon-tips();
+}
+.icon-tips-error::before{
+  background: url(../../images/common/dialog/icon-tips-error.png) no-repeat center center;
+  @include icon-tips();
+}
+.modal-body-line{
+  height: 20px;
+  line-height: 20px;
+}
+.modal-body-msg{
+  margin-left: 10px;
+  color: #666;
+  font-size: 14px;
+}
+.modal-dialog{
+  width: 378px !important;
+}
+.add-tag-dialog{
+  border: 1px solid #E3E3E4;
+  .modal-header{
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    border-bottom: 1px solid #E3E3E4;
+    color: #999999;
+    font-size: 14px;
+    .add-tag-title{
+      float: left;
+    }
+    .btn-text-close{
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      margin-top: -5px;
+      float: right;
+      background: url(../../images/common/dialog/icon-close.png);
+      background-size: 100% 100%;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .modal-body{
+    padding: 0 20px;
+    .common-form{
+      .field-group{
+        margin-top: 22px;
+      }
+      .form-item-input{
+        width: 256px;
+      }
+    }
+  }
+  .modal-footer{
+    text-align: center;
+    padding: 48px 0 24px 0;
+    border: none;
+    >span{
+      display: inline-block;
+    }
+    .blue-empty-btn{
+      margin-left: 16px;
+    }
+  }
+}
