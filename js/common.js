@@ -22,3 +22,16 @@ export const isEmptyValue = (value) => {
         return false
     }
 }
+
+function getQueryObj () {
+    var queryObj = {};
+    var queryString = window.location.href.split('?')[1];
+    var arr = queryString.split('&');
+    for (let item of arr) {
+        var keyValue = item.split('=');
+        var key = keyValue[0];
+        var value = keyValue[1];
+        queryObj[key] = value
+    }
+    return queryObj;
+}
