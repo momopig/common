@@ -15,7 +15,7 @@ function escapeValue(value) {
  * @desc 空字符串''、null和undefined，认为是空值，0和false不是
  * 
 */
-export const isEmptyValue = (value) => {
+function isEmptyValue(value) {
     if (value === '' || value === null || value === undefined) {
         return true
     } else {
@@ -23,15 +23,21 @@ export const isEmptyValue = (value) => {
     }
 }
 
+/**
+ * @desc 从地址栏中获取query object
+ * 
+*/
 function getQueryObj () {
     var queryObj = {};
     var queryString = window.location.href.split('?')[1];
     var arr = queryString.split('&');
+
     for (let item of arr) {
         var keyValue = item.split('=');
         var key = keyValue[0];
         var value = keyValue[1];
         queryObj[key] = value
     }
+
     return queryObj;
 }
