@@ -43,6 +43,7 @@
 规范要求：强制  
 一般顺序：布局属性>尺寸属性>内容属性>其它属性  
 好处：有分类有顺序，位置固定，方便定位修改  
+其余方案: [css-tricks-How do you order your CSS properties?](https://css-tricks.com/poll-results-how-do-you-order-your-css-properties/)
 举例：  
 
 ```
